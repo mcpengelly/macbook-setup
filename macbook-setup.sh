@@ -8,7 +8,7 @@ brew tap caskroom/cask
 # touch ~/.bash_profile
 
 # chrome
-brew cask install google-chrome  
+brew cask install google-chrome
 
 # slack
 brew cask install slack
@@ -44,14 +44,13 @@ nvm use stable
 # node help app
 npm i -g tldr
 
-# add to EOF ~/.zshrc or terminal won't be aware of nvm (automate this)
-# export NVM_DIR="~/.nvm"
-# source ~/.nvm/nvm.sh
+#  adds nvm to end of ~/.zshrc configuration so whenever terminal is reset nvm gets reloaded
+echo "[[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh" >> ~/.zshrc
 
 # vim config download
 git clone --depth=1 https://github.com/amix/vimrc.git ~/.vim_runtime
 
-# vim config install 
+# vim config install
 sh ~/.vim_runtime/install_awesome_vimrc.sh
 
 # spotify
