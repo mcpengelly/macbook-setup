@@ -4,9 +4,6 @@
 # homebrew cask
 brew tap caskroom/cask
 
-# init .bash_profile not needed if using oh my zsh later
-# touch ~/.bash_profile
-
 # chrome
 brew cask install google-chrome
 
@@ -28,6 +25,29 @@ brew cask install bettertouchtool
 # custom calendar app
 brew cask install itsycal
 
+# backend development tool
+brew cask install webstorm
+
+# custom terminal
+brew cask install iterm2
+
+# REST Client
+brew cask install postman
+
+# keepalive app
+brew cask install caffeine
+
+# music
+brew cask install spotify
+
+# node install LTS
+nvm install stable
+nvm use stable
+
+# if you like to use bash uncoment the following: and comment out oh my zsh / .zshrc
+# touch ~/.bash_profile
+# echo "[[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh" >> ~/.bash_profile
+
 # oh my zsh style for iterm2
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
@@ -36,13 +56,6 @@ git clone https://github.com/agnoster/agnoster-zsh-theme.git ~/.oh-my-zsh/custom
 
 # apply theme
 ZSH_THEME="agnoster/agnoster"
-
-# node install LTS
-nvm install stable
-nvm use stable
-
-# node help app
-npm i -g tldr
 
 #  adds nvm to end of ~/.zshrc configuration so whenever terminal is reset nvm gets reloaded
 echo "[[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh" >> ~/.zshrc
@@ -53,5 +66,6 @@ git clone --depth=1 https://github.com/amix/vimrc.git ~/.vim_runtime
 # vim config install
 sh ~/.vim_runtime/install_awesome_vimrc.sh
 
-# spotify
-brew cask install spotify
+# node help app
+npm i -g tldr
+
