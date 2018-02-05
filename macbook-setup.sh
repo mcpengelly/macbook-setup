@@ -40,6 +40,10 @@ brew cask install caffeine
 # music
 brew cask install spotify
 
+# chat clients
+brew cask install discord
+brew cask install whatsapp
+
 # node install LTS
 nvm install stable
 nvm use stable
