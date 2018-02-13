@@ -11,8 +11,7 @@ shell script for setting up a fresh macbook
 - then run the script using the following
 ```bash macbook-setup.sh```
 
-
-Noteable installs/configurations:
+## Noteable installs/configurations:
 - homebrew (MacOS package manager)
 - homebrew cask (for installing third party applications)
 - nvm (node version manager)
