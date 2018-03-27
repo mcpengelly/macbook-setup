@@ -10,6 +10,12 @@ brew cask install google-chrome
 # slack
 brew cask install slack
 
+# cmd line fuzzy searcher
+brew install fzf
+
+# better ack
+brew install the_silver_searcher
+
 # nvm install
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash
 
@@ -47,7 +53,8 @@ git clone --depth=1 https://github.com/amix/vimrc.git ~/.vim_runtime
 sh ~/.vim_runtime/install_awesome_vimrc.sh
 
 
-####### PREFERENCE STUFF, UNCOMMENT/COMMENT DESIRED TOOLS HERE #######
+# PREFERENCE STUFF, UNCOMMENT/COMMENT DESIRED TOOLS HERE
+#################################
 
 # text editors, pick your preference
 brew cask install sublime-text
@@ -78,8 +85,49 @@ brew cask install spotify
 brew cask install discord
 brew cask install whatsapp
 
+# diagram tool
+brew cask install drawio
+
+# clipboard manager
+brew cask install copyq
+
+#################################
+
+# npm terminal programs i like to use
 #################################
 
 # node help app
 npm i -g tldr
+
+# empties trash
+npm i -g trash-cli
+
+# check ports
+npm i -g get-port-cli
+
+# check public ip
+npm i -g public-ip-cli
+
+# test internet speed
+npm i -g speedtest-cli
+
+# kill processes
+npm i -g fkill-cli opn-cli
+
+# books
+npm i -g gitbook-cli
+npm i -g pagesres-cli
+
+# caniuse.com
+npm i -g caniuse-cmd
+
+# stackoverflow.com
+npm i -g how2
+
+# generate changelogs from git metadata
+npm i -g conventional-changelog-cli
+
+#################################
+#
+
 
