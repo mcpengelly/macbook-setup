@@ -1,19 +1,21 @@
+# Caution: this script should primarily be used for reference as these types of scripts can easily go out of date.
+
 # install homebrew
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 # get homebrew cask
 brew tap caskroom/cask
 
-# chrome
+# browser
 brew cask install google-chrome
 
-# slack
+# work communication
 brew cask install slack
 
-# nvm install
+# NVM install: Nodejs version manager, makes installing multiple node versions easier.
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash
 
-# node install long term support version
+# node, install latest stable 
 nvm install stable
 nvm use stable
 
@@ -26,7 +28,6 @@ nvm use stable
 # touch ~/.bash_profile
 # echo "[[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh" >> ~/.bash_profile
 ######### standard bash profile setup ########
-
 
 ######### oh my zsh terminal profile setup + theme ########
 # oh my zsh style for iterm2
@@ -46,10 +47,10 @@ git clone --depth=1 https://github.com/amix/vimrc.git ~/.vim_runtime
 # vim config install
 sh ~/.vim_runtime/install_awesome_vimrc.sh
 
-# text editors, pick your preference
+# text editors, choose your preference
 # brew cask install sublime-text
 # brew cask install atom
-brew cask visual-studio-code
+brew cask install visual-studio-code
 
 # powerline patched fonts
 git clone https://github.com/powerline/fonts.git --depth=1
@@ -87,8 +88,8 @@ brew cask install whatsapp
 # diagram tool
 brew cask install drawio
 
-# clipboard manager
-brew cask install copyq
+# OS helper + clipboard manager.
+brew cask install alfred
 
 ### NPM Terminal Programs
 
