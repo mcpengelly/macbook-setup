@@ -34,8 +34,8 @@ nvm use stable
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # apply theme
-export ZSH_THEME="robbyrussell" # simple, works out of the box
-# export ZSH_THEME="agnoster" # more advanced but uses powerline fonts
+# export ZSH_THEME="robbyrussell" # simple, works out of the box
+export ZSH_THEME="agnoster" # more advanced but uses powerline fonts
 
 #  adds nvm to end of ~/.zshrc configuration so whenever terminal is reset nvm gets reloaded
 echo "[[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh" >> ~/.zshrc
