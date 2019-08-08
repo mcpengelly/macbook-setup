@@ -3,48 +3,51 @@
 # install homebrew
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-# get homebrew cask
-brew tap caskroom/cask
+# get homebrew cask - deprecated
+# brew tap caskroom/cask
 
-# browser
 brew cask install google-chrome
-
-# work communication
+brew cask install firefox
 brew cask install slack
+brew cask install visual-studio-code
 
-# NVM install: Nodejs version manager, makes installing multiple node versions easier.
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash
+# cmd line fuzzy searcher
+brew install fzf
+
+# better ack
+brew install the_silver_searcher
+
+# nvm install
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
 
 # node, install latest stable 
 nvm install stable
 nvm use stable
 
-# PREFERENCE STUFF, UNCOMMENT/COMMENT DESIRED TOOLS HERE
-
-## NOTE: only bash_profile or oh my zsh setup should be used, not both.
-
-######### standard bash profile setup ########
-# if you like to use the bash terminal uncoment the following: and comment out oh my zsh / .zshrc
-# touch ~/.bash_profile
-# echo "[[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh" >> ~/.bash_profile
-######### standard bash profile setup ########
-
-######### oh my zsh terminal profile setup + theme ########
-# oh my zsh style for iterm2
+# oh my zsh terminal profile setup + theme
+# oh my zsh installation
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-# apply theme
-# export ZSH_THEME="robbyrussell" # simple, works out of the box
-export ZSH_THEME="agnoster" # more advanced but uses powerline fonts
+# oh my zsh theme
+git clone https://github.com/agnoster/agnoster-zsh-theme.git ~/.oh-my-zsh/custom/themes/agnoster
 
-#  adds nvm to end of ~/.zshrc configuration so whenever terminal is reset nvm gets reloaded
-echo "[[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh" >> ~/.zshrc
-######### oh my zsh terminal profile setup ########
+# apply theme 
+ZSH_THEME="agnoster/agnoster" # complex
+# ZSH_THEME="robbyrussell" # simple
+
+#  adds nvm to end of ~/.zshrc configuration
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# echo "[[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh" >> ~/.zshrc
+
+# powerline fonts, needed for zsh theme
+git clone https://github.com/powerline/fonts.git --depth=1
+cd fonts && ./install.sh
+cd .. && rm -rf fonts
 
 # vim config download
 git clone --depth=1 https://github.com/amix/vimrc.git ~/.vim_runtime
-
-# vim config install
 sh ~/.vim_runtime/install_awesome_vimrc.sh
 
 # text editors, choose your preference
@@ -52,16 +55,26 @@ sh ~/.vim_runtime/install_awesome_vimrc.sh
 # brew cask install atom
 brew cask install visual-studio-code
 
-# powerline patched fonts
-git clone https://github.com/powerline/fonts.git --depth=1
-cd fonts
-./install.sh
+# my optional apps
 
-# better terminal, be sure to set the font to a powerline font
+# git explorer
+brew cask install gitup
+
+# image editor
+brew cask install gimp
+
+# containerization
+brew cask install docker
+brew cask install vagrant
+
+# javascript IDE (useful for backend debugging)
+# brew cask install webstorm
+
+# better terminal
 brew cask install iterm2
 
-# REST Client for making backend requests
-brew cask install postman
+# password manager
+brew cask install dashlane
 
 # custom hotkey app (allows window snapping by default)
 brew cask install bettertouchtool
@@ -83,15 +96,17 @@ brew cask install spotify
 
 # chat clients
 brew cask install discord
+brew cask install telegram
 brew cask install whatsapp
 
 # diagram tool
 brew cask install drawio
 
-# OS helper + clipboard manager.
+# clipboard manager
 brew cask install alfred
 
-### NPM Terminal Programs
+
+# npm terminal programs
 
 # node help app
 npm i -g tldr
@@ -118,30 +133,5 @@ npm i -g pagesres-cli
 # caniuse.com
 npm i -g caniuse-cmd
 
-# stackoverflow.com
-npm i -g how2
-
-# generate changelogs from git metadata
-npm i -g conventional-changelog-cli
-
-# oh my zsh plugins, just copy paste these into your .zshrc afterward
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-# plugins=(
-  # git
-  # git-extras
-  # brew
-  # jira
-  # vscode
-  # web-search
-  # yarn
-  # jsontools
-  # node
-  # osx
-  # common-aliases
-  # encode64
-# )
-
-
+# auto suggestion for zsh, add plugins=(zsh-autosuggestions) to .zshrc
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
